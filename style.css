@@ -1,0 +1,691 @@
+:root {
+    --purple: #6f42c1;
+    --dark-purple: #5a32a3;
+    --light-pink: #fff0f6;
+    --green: #28a745;
+}
+
+/* Reset and global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--light-pink);
+    color: #333;
+    line-height: 1.6;
+}
+
+.text-purple {
+    color: var(--purple);
+}
+
+/* Header */
+header {
+    background: linear-gradient(to right, #8e44ad, #c39bd3);
+    color: purple;
+    text-align: center;
+    padding: 40px 20px;
+    /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); */
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: purple;
+}
+
+header p {
+    font-size: 1.1rem;
+    color: #6c3483;
+}
+
+nav ul {
+    list-style: none;
+    margin-top: 20px;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 12px;
+}
+
+nav ul li a {
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ffe4f2;
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(to bottom right, #fce4ec, #f8bbd0);
+    color: #6d0270;
+    animation: fadeIn 1s ease-out;
+}
+
+.hero-image {
+    width: 220px;
+    height: auto;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-outline-purple {
+    border: 2px solid #6f42c1;
+    color: #6f42c1;
+    background: transparent;
+}
+
+.btn-outline-purple:hover {
+    background-color: #6f42c1;
+    color: white;
+}
+
+
+/* About Section */
+.about-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 50px 20px;
+    background-color: #fff;
+    gap: 30px;
+    animation: fadeIn 1s ease-out;
+}
+
+.about-section .bio {
+    max-width: 500px;
+}
+
+.about-img {
+    width: 280px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Gallery */
+.gallery {
+    padding: 50px 20px;
+    background: #fff9fc;
+    text-align: center;
+    animation: fadeIn 1s ease-out;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.05);
+}
+
+.card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Media Page */
+.media-section {
+    padding: 50px 20px;
+    background: #f3e5f5;
+    text-align: center;
+}
+
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    margin: 30px auto;
+    max-width: 560px;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+}
+
+/* Contact Page */
+.contact {
+    padding: 50px 20px;
+    background: #fff0f6;
+    text-align: center;
+}
+
+.contact form {
+    max-width: 500px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact input,
+.contact textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+.contact button {
+    background-color: #8e44ad;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.contact button:hover {
+    background-color: #6c3483;
+}
+
+/* Socials */
+.socials {
+    margin-top: 30px;
+}
+
+.socials a {
+    margin: 0 10px;
+    color: #8e44ad;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.socials a:hover {
+    text-decoration: underline;
+}
+
+.socials a img:hover,
+.whatsapp-float:hover img,
+.facebook-float:hover img,
+.twitter-float:hover img,
+.linkedin-float:hover img {
+    transform: scale(1.1);
+    transition: transform 0.3s;
+}
+
+/* Social Media Floating Buttons */
+.socials a img,
+.whatsapp-float img,
+.facebook-float img,
+.twitter-float img,
+.linkedin-float img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+/* Social Media Floating Buttons */
+.whatsapp-float img {
+    background-color: #25d366;
+}
+
+.facebook-float img {
+    background-color: #3b5998;
+}
+
+.twitter-float img {
+    background-color: #1da1f2;
+}
+
+.linkedin-float img {
+    background-color: #0077b5;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #8e44ad;
+    color: white;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .about-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-img {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .contact form {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .hero h1,
+    header h1 {
+        font-size: 2rem;
+    }
+
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+    background-color: #25d366;
+    border-radius: 50%;
+    padding: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.twitter-float {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    background-color: white;
+    border-radius: 50%;
+    padding: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.linkedin-float {
+    position: fixed;
+    top: 0;
+    left: 80px;
+    z-index: 999;
+    background-color: #0077b5;
+    /* LinkedIn blue */
+    border-radius: 50%;
+    padding: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.facebook-float {
+    position: fixed;
+    top: 0;
+    right: 20px;
+    z-index: 999;
+    background-color: blue;
+    border-radius: 50%;
+    padding: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-purple {
+    background-color: #6f42c1;
+    color: white;
+}
+
+.btn-purple:hover {
+    background-color: #5a32a3;
+    color: white;
+}
+
+/* for fooster */
+.bg-purple {
+    background-color: pink;
+    /* You can change this to a different purple if you prefer */
+}
+
+.text-green {
+    color: #28a745;
+    /* Bootstrap's default green or customize */
+}
+
+.text-purple {
+    color: #6f42c1;
+}
+
+.section {
+    padding: 50px 20px;
+}
+
+/* Back to Top Button */
+#backToTop {
+    display: none;
+    background-color: #6f42c1;
+    color: white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 24px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#backToTop:hover {
+    background-color: #5a32a3;
+}
+
+
+/* Scroll to Top Button Visibility */
+@media (max-width: 768px) {
+    .hero-image {
+        width: 180px;
+    }
+
+    .about-img {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .gallery-grid img {
+        width: 100%;
+    }
+
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #6f42c1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #f8f9fa;
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #121212;
+        color: #e0e0e0;
+    }
+
+    header {
+        background: linear-gradient(to right, #3f51b5, #673ab7);
+    }
+
+    .hero {
+        background: linear-gradient(to bottom right, #1a237e, #303f9f);
+        color: #bbdefb;
+    }
+
+    .about-section,
+    .gallery,
+    .media-section,
+    .contact {
+        background-color: #1c1c1c;
+        color: #e0e0e0;
+    }
+
+    footer {
+        background: #3f51b5;
+        color: white;
+    }
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background-color: white;
+        color: black;
+    }
+
+    header,
+    footer {
+        display: none;
+    }
+
+    .navbar {
+        position: static;
+    }
+
+    .btn-outline-purple,
+    .btn-purple {
+        display: none;
+    }
+
+    .socials a {
+        display: none;
+    }
+}
+
+/* Accessibility Enhancements */
+:focus {
+    outline: 2px solid #6f42c1;
+    outline-offset: 2px;
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: more) {
+    body {
+        background-color: #000;
+        color: #fff;
+    }
+
+    header,
+    footer {
+        background-color: #333;
+        color: #fff;
+    }
+
+    .btn-outline-purple,
+    .btn-purple {
+        border-color: #fff;
+        color: #fff;
+    }
+
+    .btn-outline-purple:hover,
+    .btn-purple:hover {
+        background-color: #fff;
+        color: #000;
+    }
+}
+
+/* Animation Enhancements */
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Apply slide-in animation to sections */
+.section {
+    animation: slideIn 0.5s ease-out;
+}
+
+/* Responsive Typography */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+
+    .about-section .bio {
+        font-size: 0.9rem;
+    }
+
+    .contact form input,
+    .contact form textarea {
+        font-size: 0.9rem;
+    }
+}
+
+/* Custom Scrollbar for Dark Mode */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #6f42c1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #121212;
+}
+
+/* Custom Scrollbar for Light Mode */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #6f42c1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #f8f9fa;
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+#backToTop {
+    z-index: 999;
+    border-radius: 50px;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+#backToTop:hover {
+    background-color: #5a32a3;
+}
+
+#backToTop i {
+    font-size: 20px;
+    vertical-align: middle;
+}
+
+#backToTop {
+    z-index: 1050;
+}
+
+/* Live stream style here */
+.live-body {
+    background-color: #1a1a1a;
+    color: #fff;
+}
+
+#live-container {
+    display: none;
+}
+
+#live-badge {
+    background-color: #dc3545;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.25rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+}
+
+a.btn-live {
+    background-color: #6f42c1;
+    color: #fff;
+    padding: 0.75em 1.5rem;
+}
+
+a.btn-live:hover {
+    background-color: #5a32a3;
+}
+
+.body {
+    background-color: #1a1a1a;
+    color: #fff;
+}
+
+#live-container,
+#previous-live {
+    display: none;
+}
+
+#live-badge {
+    background-color: #dc3545;
+    color: #fff;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 0.3rem;
+
+}
