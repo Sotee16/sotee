@@ -1,0 +1,8 @@
+fetch('/data/settings.yml')
+.then(res => res.text())
+.then(text => {
+const config = jsyaml.load(text);
+animateCount(config.countries);
+updateDaysLeft(config.event_date);
+document.getElementById('event-description').innerText = config.event_description;
+});

@@ -1,0 +1,54 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "site"
+    label: "Site Settings"
+    files:
+      - file: "data/settings.yml"
+        label: "Homepage & Event"
+        name: "settings"
+        fields:
+          - { label: "Event Date", name: "event_date", widget: "datetime" }
+          - {
+              label: "Countries Represented",
+              name: "countries",
+              widget: "number",
+            }
+          - {
+              label: "Event Description",
+              name: "event_description",
+              widget: "text",
+            }
+          - label: "Live Settings"
+            name: "live_setting"
+            widget: "object"
+            fields:
+              - {
+                  label: "Live Active",
+                  name: "live_active",
+                  widget: "boolean",
+                  default: false,
+                }
+              - {
+                  label: "YouTube/Facebook Live URL",
+                  name: "live_url",
+                  widget: "string",
+                }
+              - { label: "Live Description", name: "live_desc", widget: "text" }
+              - {
+                  label: "Previous Live URL",
+                  name: "previous_live_url",
+                  widget: "string",
+                  required: false,
+                }
+              - {
+                  label: "Previous Description",
+                  name: "previous_live_desc",
+                  widget: "text",
+                  required: false,
+                }
